@@ -7,9 +7,9 @@ class Methods_005 {
     }
 
     public static void main(String[] args) {
-        int summand1 = 2, summand2 = 3;
+        int summand3 = 2, summand4 = 3;
 
-        int sum = Add(summand1, summand2);
+        int sum = Add(summand3, summand4);
 
         System.out.println(sum); // 5
     }

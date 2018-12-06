@@ -11,5 +11,12 @@ class MethodRecFact {
         int factorial = Factorial(4);
 
         System.out.println(factorial);
+
+        int n = 1;
+        for (int i = 1; i <= 4; i++)
+            n*=i;
+
+        System.out.println(n);
+
     }
 }
