@@ -3,45 +3,12 @@ package com.itschool;
 import java.util.Date;
 
 class Student {
-    // Имя студента, доступен только в классу
-    private String name;
-    // Специальность, доступна только в классу
-    private String specialty;
+    //  поля
+    private String name;        // Имя студента (доступно только внутри класса)
+    private String specialty;   // Специальность (доступна только внутри класса)
+    private Date birthday;      // Дата рождения (доступна только внутри класса)
 
-    public Date getBirthday()
-    {
-        return birthday;
-    }
-
-    public String getBirthdayAsString()
-    {
-        return birthday.toString();
-    }
-
-    public void setBirthday(Date birthday)
-    {
-        this.birthday = (new Date()).before(birthday) ? new Date() : birthday;
-    }
-
-    private Date birthday;
-
-    // Метод для получения Имя, доступен в любом месте
-    String getName() {
-        return name;
-    }
-
-    // Метод для Изменения Имя, доступен в любом месте
-    public void setName(String var) {
-        this.name = var;
-    }
-
-    // Метод для получения Специальности, доступен в любом месте
-    String getSpecialty()
-    {
-        return specialty;
-    }
-
-    // Конструктор класса, определенный пользователем
+    // Конструктор по-умолчанию (без параметров)
     Student()
     {
         name = "NoName";
@@ -49,14 +16,64 @@ class Student {
         birthday = new Date();
     }
 
-        // Конструктор класса, определенный пользователем
-    Student(String name, String speciality) {
+    // Конструктор класса, определенный пользователем
+    Student(String name, String speciality)
+    {
         // ключевое слов this явно указывает, что поле относится к данному классу
         this.name = name;
         this.specialty = speciality;
     }
 
-    // Метод сна, а что ещё надо студенту ? :)
+    String getSpecialty()       // Метод-аксессор (геттер) для получения Специальности (доступен в любом месте текущего пакета com.itschool)
+    {
+        return specialty;
+    }
+
+    // Методы для получения свойств
+    public void setSpecialty(String specialty)  // Аксессор (сеттер) для присвоения значения наименования Специальности
+    {
+        this.specialty = specialty;
+    }
+
+    public Date getBirthday()
+    {
+        return birthday;
+    }
+
+    // Метод для получения Имени (доступен в любом месте текущего пакета com.itschool)
+    String getName()
+    {
+        return name;
+    }
+
+    // Метод для Изменения Имя (доступен в любом месте программы)
+    public void setName(String var)
+    {
+        this.name = var;
+    }
+
+// Конструкторы
+
+    public String getBirthday(int format)
+    {
+        switch (format)
+        {
+            case 1:
+                return birthday.getDay() + "." + birthday.getMonth() + "." + birthday.getYear();
+            case 2:
+                return birthday.getYear() + "." + birthday.getMonth() + "." + birthday.getYear();
+            case 3:
+                return birthday.getMonth() + "." + birthday.getYear();
+        }
+        return birthday.toGMTString();
+    }
+
+    public void setBirthday(Date birthday)
+    {
+        this.birthday = (new Date()).before(birthday) ? new Date() : birthday;
+    }
+
+    // Метод класса для сна (а что ещё надо студенту?) :)
     String Sleep() {
         return name + " засыпает...";
     }
