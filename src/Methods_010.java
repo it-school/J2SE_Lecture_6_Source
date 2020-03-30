@@ -23,6 +23,11 @@ class Methods_010 {
         System.out.println(d);
     }
 
+    private static void Function(float d)         // 4-я перегрузка.
+    {
+        System.out.println(d);
+    }
+
     private static void Function(String s, int i)  // 5-я перегрузка.
     {
         System.out.println(s + i);
@@ -43,7 +48,7 @@ class Methods_010 {
         Function();                  // 1-я перегрузка.
         Function("A");               // 2-я перегрузка.
         Function(1);                 // 3-я перегрузка.
-        Function(3.14);              // 4-я перегрузка.
+        Function(Math.PI);              // 4-я перегрузка.
         Function("B ", 2);           // 5-я перегрузка.
         Function(3, " C");           // 6-я перегрузка.
     }

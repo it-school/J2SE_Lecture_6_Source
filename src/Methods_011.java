@@ -1,7 +1,5 @@
 // Перегрузка методов.
 
-import java.lang.*;
-
 class Methods_011 {
     static void Operation()                                         // 1-я перегрузка.
     {
@@ -23,9 +21,10 @@ class Methods_011 {
         System.out.println(value1 + "," + value2 + "," + value3);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         Operation();                  // 1-я перегрузка.
-        Operation("val");             // 2-я перегрузка.
+        Operation("val");      // 2-я перегрузка.
         Operation("val", 10);         // 3-я перегрузка.
         Operation("val", 10, 12.2);   // 4-я перегрузка.
     }
