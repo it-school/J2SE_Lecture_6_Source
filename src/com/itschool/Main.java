@@ -2,9 +2,25 @@ package com.itschool;
 
 public class Main
 {
-    public static void main(String[] args)
-    {
-        HomeWork1 credit = new HomeWork1();
+	public static void main(String[] args)
+	{
+		MyClass myClass = new MyClass();
+		System.out.println(myClass.toString());
+		String text = "sleep";
+		myClass.doIT(text);
+		myClass.doIT("");
+		myClass.setTemperature1(12345567);
+		System.out.println(myClass.getTemperature1());
+		myClass.drawRectangle();
+		System.out.println();
+		myClass.drawRectangle(3, 10);
+		System.out.println();
+		myClass.drawRectangle(4, 6, '@');
+		MyClass myClass1 = new MyClass('$');
+		myClass1.drawRectangle(10, 2);
+
+		myClass.doNothingRecursively();
+        /*HomeWork1 credit = new HomeWork1();
         credit.credit = 10000;
 
         System.out.println(credit.moneyCredit(500));
@@ -20,7 +36,7 @@ public class Main
 
         HomeWork2 exchanger = new HomeWork2(28.1, 30.5, 36);
         System.out.println(exchanger.exchange(1000, CurrencyType.USD));
-
+*/
         /*
         // Создание объекта с конструктором по-умолчанию
         Student student1 = new Student();
@@ -82,5 +98,5 @@ public class Main
                     student.getSpecialty());
         }
         */
-    }
+	}
 }
