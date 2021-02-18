@@ -1,25 +1,41 @@
 package com.itschool;
 
-public class Main
-{
-    public static void main(String[] args)
-    {
-        HomeWork1 credit = new HomeWork1();
-        credit.credit = 10000;
+public class Main {
+   static int factorial(int n) {
+      int result = 1;
+      for (int i = 2; i <= n; i++) {
+         result *= i;
+      }
 
-        System.out.println(credit.moneyCredit(500));
-        System.out.println(credit.moneyCredit(1500));
-        System.out.println(credit.moneyCredit(5500));
-        System.out.println(credit.moneyCredit(2500));
-        System.out.println(credit.moneyCredit(100));
+      return result;
+   }
 
-        HomeWork1 credit2 = new HomeWork1(5800);
-        System.out.println(credit2.moneyCredit(500));
-        System.out.println(credit2.moneyCredit(1500));
-        System.out.println(credit2.moneyCredit(5500));
+   static int factorialR(int n) {
+      return (n <= 1) ? 1 : n * factorialR(n - 1);
+   }
 
-        HomeWork2 exchanger = new HomeWork2(28.1, 30.5, 36);
-        System.out.println(exchanger.exchange(1000, CurrencyType.USD));
+   public static void main(String[] args) {
+      System.out.println(factorial(5));
+      int n = factorialR(5);
+      System.out.println(n);
+
+/*      Scanner sc = new Scanner(System.in);
+      HomeWork1 credit = new HomeWork1();
+      credit.credit = 10000;
+
+      System.out.println(credit.moneyCredit(500));
+      System.out.println(credit.moneyCredit(1500));
+      System.out.println(credit.moneyCredit(5500));
+      System.out.println(credit.moneyCredit(2500));
+      System.out.println(credit.moneyCredit(100));
+
+      HomeWork1 credit2 = new HomeWork1(5800);
+      System.out.println(credit2.moneyCredit(500));
+      System.out.println(credit2.moneyCredit(1500));
+      System.out.println(credit2.moneyCredit(5500));
+
+      HomeWork2 exchanger = new HomeWork2(28.1, 30.5, 36);
+      System.out.println(exchanger.exchange(1000, CurrencyType.USD));*/
 
         /*
         // Создание объекта с конструктором по-умолчанию
@@ -82,5 +98,5 @@ public class Main
                     student.getSpecialty());
         }
         */
-    }
+   }
 }
