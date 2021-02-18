@@ -1,6 +1,7 @@
 
 class MethodRecFact {
-    private static int Factorial(int n) {
+    private static double Factorial(long n)
+    {
        /* if (n == 0)
             return 1;
         else
@@ -11,13 +12,16 @@ class MethodRecFact {
 
     public static void main(String[] args)
     {
-	    int factorial = Factorial(5);
+	    final int N = 22;
+	    double factorial = Factorial(N);
 	    // 1 * 2 * 3 * 4 * 5
 
 	    System.out.println(factorial);
 
-	    int n = 1;
-	    for (int i = 1; i <= 5; i++) { n *= i; }
+	    double n = 1;
+	    for (int i = 1; i <= N; i++) {
+		    n *= i; // n = n * i;
+	    }
 
 	    System.out.println(n);
 
